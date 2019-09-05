@@ -20,7 +20,6 @@ public class KafkaexampleApplication {
 
 
 		SpringApplication app = new SpringApplication(KafkaexampleApplication.class);
-		//app.setBannerMode(Banner.Mode.OFF);
 		app.run(args);
 	}
 }

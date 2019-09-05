@@ -2,6 +2,7 @@ package com.beginfarming.kafkaexample.service;
 
 import com.beginfarming.kafkaexample.model.Greetings;
 import com.beginfarming.kafkaexample.streamkafka.GreetingsStreams;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
@@ -15,11 +16,8 @@ import org.springframework.util.MimeTypeUtils;
 public class GreetingsServiceImpl implements GreetingsService {
 
 
-    private final GreetingsStreams greetingsStreams;
-
-    public GreetingsServiceImpl(GreetingsStreams greetingsStreams) {
-        this.greetingsStreams = greetingsStreams;
-    }
+    @Autowired
+    private GreetingsStreams greetingsStreams;
 
     public void sendGreeting(final Greetings greetings) {
 
